@@ -3,7 +3,7 @@ name: Node.js CI
 on: [push, pull_request]
 
 jobs:
-  build:
+  test-node:
     runs-on: ubuntu-latest
 
     strategy:
@@ -23,3 +23,13 @@ jobs:
     - name: run client
       run: node client.mjs
   
+  test-curl:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: start server
+      run: node server.mjs &
+    - name: sleep 3 seconds
+      run: sleep 3    
+    - name: cURL it
+      run: curl -v http://127.0.0.1:3399
