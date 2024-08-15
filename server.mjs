@@ -26,6 +26,7 @@ server.listen('3399', '0.0.0.0', () => {
 server.on('connection', (socket) => {
     socket.on('data', chunk => {
         socket.write(tcpPayload); // For literally any data we respond with the mocked body to keep it simple
+        socket.end();
     });
     socket.on('end', function() {
         console.log('Closing connection with the client');
