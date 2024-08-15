@@ -1,4 +1,13 @@
-const response = await fetch('http://127.0.0.1:3399');
-const text = await response.text();
+import http from 'http';
 
-console.log(`got`, text);
+http.get('http://127.0.0.1:3399', (res) => {
+    res.on('data', chunk => {
+        console.log(`Got chunk`, chunk);
+    });
+
+    res.on('end', () => {
+        console.log(`response ended`);
+    });
+}).on('error', err => {
+    throw err;
+})
