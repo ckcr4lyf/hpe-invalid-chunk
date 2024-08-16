@@ -10,4 +10,4 @@ See: https://github.com/nodejs/undici/issues/2678
 
 ## Online Demo
 
-A copy of `server.mjs` is deployed on http://rfc5746.mywaifu.best:3399 , so you can test using you're preferred HTTP library. (I'll do my best to keep it up, open an issue if it seems down)
+A copy of `server.mjs` is deployed on http://rfc5746.mywaifu.best:3399 , so you can test using your preferred HTTP library. (I'll do my best to keep it up, open an issue if it seems down)
